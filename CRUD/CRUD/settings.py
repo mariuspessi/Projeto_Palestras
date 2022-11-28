@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core'
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -82,17 +82,7 @@ DATABASES = {
     }
 }
 
-'''
-DB_NAME = 'mongodb+srv://<username>:<password>@<cluster-name>.mongodb.net/myFirstDatabase'
 
-DATABASES = {
-    'DEFAULT': {
-        'ENGINE': 'djongo',
-        'NAME':'BancoMOngo',
-              
-    }
-}
-''' 
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
