@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Palestrante, Palestras, Inscricoes
+from .models import Palestrante, Inscricoes
 
 def home(request):
     return render(request, "index.html")
@@ -28,30 +28,6 @@ def excluirPalestrante(request, id):
 
 #//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-def salvarPalestras(request):
-    vnome = request.POST.get("nome")
-    Palestras.objects.create(nome=vnome)
-    palestras = Palestras.objects.all()
-    return render(request, "index.html", {"palestras": palestras})
-
-def editarPalestras(request, id):
-    palestra = Palestras.objects.get(id=id)
-    return render(request, "update.html", {"palestra": palestra})
-
-def updatePalestras(request, id):
-    vnome = request.POST.get("nome")
-    palestras = Palestras.objects.get(id=id)
-    palestras.nome = vnome
-    palestras.save()
-    return redirect(home)
-
-def excluirPalestras(request, id):
-    palestras = Palestras.objects.get(id=id)
-    palestras.delete() 
-    return redirect(home)
-
-
-#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 def salvarInscricoes(request):
     vnome = request.POST.get("nome")

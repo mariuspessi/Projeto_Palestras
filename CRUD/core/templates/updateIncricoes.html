@@ -1,20 +1,36 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhando a senha</title>
+</head>
+<body>
+  
+  {{pessoa.id}} - {{pessoa.nome}}
+
+  <form action = "{% url 'updatePalestrante' pessoa.id %}" method="POST">
+    {%  csrf_token  %}
+    <input type= "text" name="nome" value="{{pessoa.nome }}">
+    <button type="submit">update</button>
+  </form>
+
+  
+</body>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Cadastro clientes</title>
+  <title>Atualização de Dados</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
 </head>
 <body>
-  <ul>
-    {% for pessoa in pessoas %}
-        <li> {{pessoa.id}} - {{pessoa.nome  }} <a href="{% url 'editar' pessoa.id %}">editar</a>
-            <a href="{% url 'excluir' pessoa.id %}">excluir</a>
-        </li> 
-        
-    {% endfor %}
+
+  {{pessoa.id}} - {{pessoa.nome}}
+  
   </ul>
 <div class="card text-center" style="padding:15px;">
   <h4>Cadastro Palestrante</h4>
@@ -24,10 +40,10 @@
         <div class="col-md-5 mx-auto">
             <div class="card">
                 <div class="card-header bg-dark text-white">
-                    <h4>Insira os dados</h4>
+                    <h4>Atualização de Dados</h4>
                 </div>
                 <div class="card-body bg-light">
-                  <form action="{% url 'salvar' %}" method="POST">
+                  <form "{% url 'updatePalestrante' pessoa.id %}" method="POST">
                     {%  csrf_token  %}
                     <div class="form-group">
                       <label for="palestra">Palestra:</label>

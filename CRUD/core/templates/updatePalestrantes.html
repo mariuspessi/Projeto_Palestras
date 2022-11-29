@@ -17,3 +17,69 @@
 
   
 </body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Atualização de Dados</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+</head>
+<body>
+
+  {{pessoa.id}} - {{pessoa.nome}}
+  
+  </ul>
+<div class="card text-center" style="padding:15px;">
+  <h4>Cadastro Palestrante</h4>
+</div><br> 
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    <h4>Atualização de Dados</h4>
+                </div>
+                <div class="card-body bg-light">
+                  <form "{% url 'updatePalestrante' pessoa.id %}" method="POST">
+                    {%  csrf_token  %}
+                    <div class="form-group">
+                      <label for="palestra">Palestra:</label>
+                      <input type="text" class="form-control" name="palestra" placeholder="Entre com a palestra" required="">
+                    </div>
+                    <div class="form-group">
+                      <label for="nome">Nome:</label>
+                      <input type="text" class="form-control" name="nome" placeholder="Entre com o nome" required="">
+                    </div>
+                    <div class="form-group">
+                      <label for="formacao">Formação</label>
+                      <input type="text" class="form-control" name="formacao" placeholder="Entre com a formação" required="">
+                    </div>
+                    <div class="form-group">
+                      <label for="empresa">Empresa</label>
+                      <input type="text" class="form-control" name="empresa" placeholder="Entre com a empresa" required="">
+                    </div>
+                    <div class="form-group">
+                      <label for="experiencia">Experiência</label>
+                      <input type="text" class="form-control" name="experiencia" placeholder="Entre com a experiência" required="">
+                    </div>
+                    <div class="form-group">
+                      <label for="contato">Contato:</label>
+                      <input type="text" class="form-control" name="contato" placeholder="Entre com o contato" required="">
+                    </div>
+
+                    <input type="submit" name="cadastro" class="btn btn-primary" style="float:right;" value="Cadastrar"               
+                    
+                  </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
