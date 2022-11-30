@@ -1,9 +1,13 @@
 from django.contrib import admin
 from django.urls import path
-from .views import home, salvarPalestrante,editarPalestrante,updatePalestrante,excluirPalestrante,salvarInscricoes,editarInscricoes,updateInscricoes,excluirInscricoes
+from .views import home,palestras,inscricao,cadastroPalestras,cadastroInscricao, salvarPalestrante,editarPalestrante,updatePalestrante,excluirPalestrante,salvarInscricoes,editarInscricoes,updateInscricoes,excluirInscricoes
 
 urlpatterns = [
     path('', home),
+    path('palestras', palestras),
+    path('inscricao', inscricao),
+    path('cadastroPalestras', cadastroPalestras),
+    path('cadastroInscricao',cadastroInscricao),
     
     path('salvarPalestrante/', salvarPalestrante, name="salvar"),
     path('editarPalestrante/<int:id>', editarPalestrante, name="editar"),

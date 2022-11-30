@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Consulta contas à pagar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+</head>
+<body>
+<div class="card text-center" style="padding:15px;">
+  <h4>INscrições Palestras</h4>
+</div><br><br> 
+<div class="container">
+  
+    if (isset($_GET['msg1']) == "insert") {
+      echo "<div class='alert alert-success alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert'>×</button>
+              Seu registro foi inserido com sucesso!
+            </div>";
+      } 
+    if (isset($_GET['msg2']) == "update") {
+      echo "<div class='alert alert-success alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert'>×</button>
+              Seu registro foi atualizado com sucesso!
+            </div>";
+    }
+    if (isset($_GET['msg3']) == "delete") {
+      echo "<div class='alert alert-success alert-dismissible'>
+              <button type='button' class='close' data-dismiss='alert'>×</button>
+              Registro Excluido com sucesso!
+            </div>";
+    }
+  
+  <h2><div class="form-group">
+                      <label for="cod_carteira">Contas Pagar</label><a href="/cadastroPalestras" style="float:right;"><button class="btn btn-success"><i class="fas fa-plus"></i></button></a>
+                      </h2>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Código da Carteira</th>
+        <th>Código do banco</th>
+        <th>Agência</th>
+        <th>Banco</th>
+        <th>Valor Pago</th>
+        <th>Vencimento</th>
+        <th>Pagamento</th>
+        <th>Observação</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td><?php echo $pagar['cod_carteira'] ?></td>
+          <td><?php echo $pagar['cod_banco'] ?></td>
+          <td><?php echo $pagar['nr_agencia'] ?></td>
+          <td><?php echo $pagar['ds_banco'] ?></td>
+          <td><?php echo $pagar['vl_pago'] ?></td>
+          <td><?php echo $pagar['data_vencimento'] ?></td>
+          <td><?php echo $pagar['dt_pagamento'] ?></td>
+          <td><?php echo $pagar['observacao'] ?></td>
+          <td>
+            <button class="btn btn-primary mr-2"><a href="update_pagar.php?editId=<?php echo $pagar['cod_carteira'] ?>">
+              <i class="fa fa-pencil text-white" aria-hidden="true"></i></a></button>
+            <button class="btn btn-danger"><a href="" onclick="confirm('Tem certeza que deseja excluir o registro?')">
+              <i class="fa fa-trash text-white" aria-hidden="true"></i>
+            
+            </a></button>
+          </td>
+        </tr>
+    
+    </tbody>
+  </table>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

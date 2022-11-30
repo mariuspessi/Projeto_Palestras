@@ -4,6 +4,18 @@ from .models import Palestrante, Inscricoes
 def home(request):
     return render(request, "index.html")
 
+def palestras(request):
+    return render(request, "palestras.html")
+
+def cadastroPalestras(request):
+    return render(request, "cadastroPalestrantes.html")
+
+def inscricao(request):
+    return render(request, "inscricao.html")
+
+def cadastroInscricao(request):
+    return render(request, "cadastroIncricoes.html")
+
 def salvarPalestrante(request):
     vnome = request.POST.get("nome")
     Palestrante.objects.create(nome=vnome)
