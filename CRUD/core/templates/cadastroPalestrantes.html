@@ -22,10 +22,7 @@
                 <div class="card-body bg-light">
                   <form action="{% url 'salvar' %}" method="POST">
                     {%  csrf_token  %}
-                    <div class="form-group">
-                      <label for="palestra">Palestra:</label>
-                      <input type="text" class="form-control" name="palestra" placeholder="Entre com a palestra" required="">
-                    </div>
+                    
                     <div class="form-group">
                       <label for="nome">Nome:</label>
                       <input type="text" class="form-control" name="nome" placeholder="Entre com o nome" required="">
@@ -46,8 +43,9 @@
                       <label for="contato">Contato:</label>
                       <input type="text" class="form-control" name="contato" placeholder="Entre com o contato" required="">
                     </div>
-
-                    <input type="submit" name="cadastro" class="btn btn-primary" style="float:right;" value="Cadastrar"               
+                    <button>
+                    <input type="submit" name="cadastro" class="btn btn-primary" style="float:right;" value="Cadastrar"      
+                    </button>         
                     
                   </form>
                 </div>
