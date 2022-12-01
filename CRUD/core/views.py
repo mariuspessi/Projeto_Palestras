@@ -5,7 +5,8 @@ def home(request):
     return render(request, "index.html")
 
 def palestras(request):
-    return render(request, "palestras.html")
+    palestrantes = palestrantes.objects.all()
+    return render(request, "palestrante.html",{"palestrantes ": palestrantes})
 
 def cadastroPalestras(request):
     return render(request, "cadastroPalestrantes.html")
@@ -16,11 +17,11 @@ def inscricao(request):
 def cadastroInscricao(request):
     return render(request, "cadastroIncricoes.html")
 
-def salvarPalestrante(request):
-    vnome = request.POST.get("nome")
-    Palestrante.objects.create(nome=vnome)
+def salvar(request):
+    vpalestra = request.POST.get("palestra")
+    Palestrante.objects.create(palestra=vpalestra)
     palestrantes = Palestrante.objects.all()
-    return render(request, "index.html", {"palestrantes": palestrantes})
+    return render(request, "palestras.html", {"palestrantes": Palestrante})
 
 def editarPalestrante(request, id):
     palestrante = Palestrante.objects.get(id=id)
@@ -45,7 +46,7 @@ def salvarInscricoes(request):
     vnome = request.POST.get("nome")
     Inscricoes.objects.create(nome=vnome)
     inscricoes = Inscricoes.objects.all()
-    return render(request, "index.html", {"inscricoes": inscricoes})
+    return render(request, "inscricao.html", {"inscricoes": inscricoes})
 
 def editarInscricoes(request, id):
     inscricoes = Inscricoes.objects.get(id=id)

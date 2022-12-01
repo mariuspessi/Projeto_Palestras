@@ -10,7 +10,7 @@ class Palestrante(models.Model):
     data = models.DateField()
 
 def __str__(self):
-        return self.nome
+        return self.palestra
 
 
     
@@ -21,6 +21,10 @@ class Inscricoes(models.Model):
     CPF = models.IntegerField()   
     data_nascimento = models.DateField()
     palestr1 =models.CharField(max_length=100)
+   
+    
+    def __str__(self):
+        return self.nome
     
 
     

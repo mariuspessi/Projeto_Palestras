@@ -1,50 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Palestrantes</title>
-</head>
-<body>
- 
-  <ul>
-    {% for pessoa in pessoas %}
-        <li> {{pessoa.id}} - {{pessoa.nome  }} <a href="{% url 'editar' pessoa.id %}">editar</a>
-            <a href="{% url 'excluir' pessoa.id %}">excluir</a>
-        </li> 
-        
-    {% endfor %}
-  </ul>
-
-  <form action = "{% url 'salvar' %}" method="POST">
-    {%  csrf_token  %}
-    <input type= "text" name="nome">
-    <button type="submit">Salvar</button>
-  </form>
-
-  
-</body>
-</html>
-
 <html lang="en">
 <head>
-  <title>Cadastro clientes</title>
+  <title>Inscrição Palestras</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
 </head>
 <body>
-  <ul>
-    {% for pessoa in pessoas %}
-        <li> {{pessoa.id}} - {{pessoa.nome  }} <a href="{% url 'editar' pessoa.id %}">editar</a>
-            <a href="{% url 'excluir' pessoa.id %}">excluir</a>
-        </li> 
-        
-    {% endfor %}
-  </ul>
+  
 <div class="card text-center" style="padding:15px;">
-  <h4>Cadastro Palestrante</h4>
+  <h4>Inscrição Palestras</h4>
 </div><br> 
 <div class="container">
     <div class="row">
@@ -54,31 +19,27 @@
                     <h4>Insira os dados</h4>
                 </div>
                 <div class="card-body bg-light">
-                  <form action="{% url 'salvar' %}" method="POST">
+                  <form action="{% url 'salvarInscricoes' %}" method="POST">
                     {%  csrf_token  %}
                     <div class="form-group">
-                      <label for="palestra">Palestra:</label>
-                      <input type="text" class="form-control" name="palestra" placeholder="Entre com a palestra" required="">
+                      <label for="palestr1">Palestra:</label>
+                      <input type="text" class="form-control" name="palestr1" placeholder="Entre com a palestra" required="">
                     </div>
                     <div class="form-group">
                       <label for="nome">Nome:</label>
                       <input type="text" class="form-control" name="nome" placeholder="Entre com o nome" required="">
                     </div>
                     <div class="form-group">
-                      <label for="formacao">Formação</label>
-                      <input type="text" class="form-control" name="formacao" placeholder="Entre com a formação" required="">
+                      <label for="CPF">CPF</label>
+                      <input type="text" class="form-control" name="CPF" placeholder="Entre com o CPF" required="">
                     </div>
                     <div class="form-group">
-                      <label for="empresa">Empresa</label>
-                      <input type="text" class="form-control" name="empresa" placeholder="Entre com a empresa" required="">
+                      <label for="data">Data nascimento</label>
+                      <input type="text" class="form-control" name="data" placeholder="Entre com a data" required="">
                     </div>
                     <div class="form-group">
-                      <label for="experiencia">Experiência</label>
-                      <input type="text" class="form-control" name="experiencia" placeholder="Entre com a experiência" required="">
-                    </div>
-                    <div class="form-group">
-                      <label for="contato">Contato:</label>
-                      <input type="text" class="form-control" name="contato" placeholder="Entre com o contato" required="">
+                      <label for="email">email:</label>
+                      <input type="text" class="form-control" name="email" placeholder="Entre com o email" required="">
                     </div>
 
                     <input type="submit" name="cadastro" class="btn btn-primary" style="float:right;" value="Cadastrar"               

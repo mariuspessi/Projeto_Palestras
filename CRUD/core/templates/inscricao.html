@@ -13,24 +13,6 @@
 </div><br><br> 
 <div class="container">
   
-    if (isset($_GET['msg1']) == "insert") {
-      echo "<div class='alert alert-success alert-dismissible'>
-              <button type='button' class='close' data-dismiss='alert'>×</button>
-              Seu registro foi inserido com sucesso!
-            </div>";
-      } 
-    if (isset($_GET['msg2']) == "update") {
-      echo "<div class='alert alert-success alert-dismissible'>
-              <button type='button' class='close' data-dismiss='alert'>×</button>
-              Seu registro foi atualizado com sucesso!
-            </div>";
-    }
-    if (isset($_GET['msg3']) == "delete") {
-      echo "<div class='alert alert-success alert-dismissible'>
-              <button type='button' class='close' data-dismiss='alert'>×</button>
-              Registro Excluido com sucesso!
-            </div>";
-    }
   
   <h2><div class="form-group">
                       <label for="inscricao.id">Inscrição</label><a href="/cadastroInscricao" style="float:right;"><button class="btn btn-success"><i class="fas fa-plus"></i></button></a>
@@ -39,32 +21,26 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>Código da Carteira</th>
-        <th>Código do banco</th>
-        <th>Agência</th>
-        <th>Banco</th>
-        <th>Valor Pago</th>
-        <th>Vencimento</th>
-        <th>Pagamento</th>
-        <th>Observação</th>
+        <th>Paslestra</th>
+        <th>Inscrição</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Data Nascimento</th>    
       </tr>
     </thead>
     <tbody>
         
         <tr>
-          <td><?php echo $pagar['cod_carteira'] ?></td>
-          <td><?php echo $pagar['cod_banco'] ?></td>
-          <td><?php echo $pagar['nr_agencia'] ?></td>
-          <td><?php echo $pagar['ds_banco'] ?></td>
-          <td><?php echo $pagar['vl_pago'] ?></td>
-          <td><?php echo $pagar['data_vencimento'] ?></td>
-          <td><?php echo $pagar['dt_pagamento'] ?></td>
-          <td><?php echo $pagar['observacao'] ?></td>
-          <td>
-            <button class="btn btn-primary mr-2"><a href="update_pagar.php?editId=<?php echo $pagar['cod_carteira'] ?>">
-              <i class="fa fa-pencil text-white" aria-hidden="true"></i></a></button>
-            <button class="btn btn-danger"><a href="consulta_pagar.php?deleteId=<?php echo $pagar['cod_carteira'] ?>" onclick="confirm('Tem certeza que deseja excluir o registro?')">
-              <i class="fa fa-trash text-white" aria-hidden="true"></i>
+          <td>{{Inscricoes.palestr1 }}</td>
+          <td>{{Inscricoes.id}}</td>
+          <td>{{Inscricoes.nome  }}</td>
+          <td>{{Inscricoes.CPF }}</td>
+          <td>{{Inscricoes.data_nascimento }} </td>
+               
+        <td>
+            
+                </ul>
+              </ul>
             
             </a></button>
           </td>

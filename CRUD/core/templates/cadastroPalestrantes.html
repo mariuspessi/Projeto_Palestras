@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Cadastro clientes</title>
+  <title>Cadastro Palestras</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
 </head>
 <body>
-  <ul>
-    {% for pessoa in pessoas %}
-        <li> {{pessoa.id}} - {{pessoa.nome  }} <a href="{% url 'editar' pessoa.id %}">editar</a>
-            <a href="{% url 'excluir' pessoa.id %}">excluir</a>
-        </li> 
-        
-    {% endfor %}
-  </ul>
-<div class="card text-center" style="padding:15px;">
-  <h4>Cadastro Palestrante</h4>
+
+ <div class="card text-center" style="padding:15px;">
+  <h4>Cadastro Palestras</h4>
 </div><br> 
 <div class="container">
     <div class="row">
